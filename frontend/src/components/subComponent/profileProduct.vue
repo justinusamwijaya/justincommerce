@@ -42,7 +42,7 @@ export default {
       'getCart'
     ]),
     deleteProduct: function () {
-      axios.delete('http://localhost:3000/products/' + this.productId, { headers: { authorization: 'bearer ' + localStorage.getItem('token') } })
+      axios.delete('https://ecommerceserver.justtodo.fun/products/' + this.productId, { headers: { authorization: 'bearer ' + localStorage.getItem('token') } })
         .then(() => {
           location.reload()
         })
@@ -57,7 +57,7 @@ export default {
         productDescription: editProductDescription,
         productPrice: editProductPrice
       }
-      axios.put('http://localhost:3000/products/' + this.productId, updatedProfile, { headers: { authorization: 'bearer ' + localStorage.getItem('token') } })
+      axios.put('https://ecommerceserver.justtodo.fun/products/' + this.productId, updatedProfile, { headers: { authorization: 'bearer ' + localStorage.getItem('token') } })
         .then(result => {
           this.getCart()
           this.editMode = false

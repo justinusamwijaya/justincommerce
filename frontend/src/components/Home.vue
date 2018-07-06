@@ -28,7 +28,7 @@ export default {
   components: { product },
   methods: {
     getAllProducts: function () {
-      axios.get('http://localhost:3000/products')
+      axios.get('https://ecommerceserver.justtodo.fun/products')
         .then(allProducts => {
           this.products = allProducts.data.result
         })

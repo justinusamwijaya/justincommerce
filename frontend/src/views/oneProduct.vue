@@ -36,7 +36,7 @@ export default {
       'getCart'
     ]),
     getProduct: function () {
-      axios.get('http://localhost:3000/products/' + this.$route.params.id)
+      axios.get('https://ecommerceserver.justtodo.fun/products/' + this.$route.params.id)
         .then(productFound => {
           this.productFound = productFound.data.result
         })
@@ -48,7 +48,7 @@ export default {
       let Cart = {
         cartId: this.productFound._id
       }
-      axios.put('http://localhost:3000/addtocart', Cart, { headers: { authorization: 'bearer ' + localStorage.getItem('token') } })
+      axios.put('https://ecommerceserver.justtodo.fun/addtocart', Cart, { headers: { authorization: 'bearer ' + localStorage.getItem('token') } })
         .then(result => {
           this.getCart()
         })

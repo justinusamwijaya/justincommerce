@@ -16,7 +16,7 @@ export default new Vuex.Store({
   },
   actions: {
     getCart ({commit}) {
-      axios.get('http://localhost:3000/getCart', { headers: { authorization: 'bearer ' + localStorage.getItem('token') } })
+      axios.get('https://ecommerceserver.justtodo.fun/getCart', { headers: { authorization: 'bearer ' + localStorage.getItem('token') } })
         .then(result => {
           commit('changeCart', result.data.cart)
         })

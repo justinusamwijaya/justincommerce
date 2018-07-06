@@ -39,7 +39,7 @@ export default {
       newProduct.append('productPrice', productPrice)
       newProduct.append('productDescription', productDescription)
       newProduct.append('img', img)
-      axios.post('http://localhost:3000/products/', newProduct, { headers: { authorization: 'bearer ' + localStorage.getItem('token'), 'Content-Type': 'multipart/form-data' } })
+      axios.post('https://ecommerceserver.justtodo.fun/products/', newProduct, { headers: { authorization: 'bearer ' + localStorage.getItem('token'), 'Content-Type': 'multipart/form-data' } })
         .then(response => {
           window.location.href = '/#/profile'
         })

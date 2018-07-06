@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     getAllList: function () {
-      axios.get('http://localhost:3000/products/user/' + localStorage.getItem('id'))
+      axios.get('https://ecommerceserver.justtodo.fun/products/user/' + localStorage.getItem('id'))
         .then(allProducts => {
           console.log(allProducts)
           this.productsUploaded = allProducts.data.result

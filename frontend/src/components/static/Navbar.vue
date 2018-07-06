@@ -85,7 +85,7 @@ export default {
         user: this.userLogin,
         password: this.passwordLogin
       }
-      axios.post('http://localhost:3000/login', userLogin)
+      axios.post('https://ecommerceserver.justtodo.fun/login', userLogin)
         .then(result => {
           localStorage.setItem('token', result.data.token)
           localStorage.setItem('username', result.data.username)
@@ -105,7 +105,7 @@ export default {
         email: this.emailSignup,
         password: this.passwordSignup
       }
-      axios.post('http://localhost:3000/signup', userSignup)
+      axios.post('https://ecommerceserver.justtodo.fun/signup', userSignup)
         .then(result => {
           this.loginModal = true
           this.userLogin = this.usernameSignup
@@ -122,7 +122,7 @@ export default {
       this.$store.state.loggedIn = false
     },
     checkout: function () {
-      axios.put('http://localhost:3000/checkout', {}, { headers: { authorization: 'bearer ' + localStorage.getItem('token') } })
+      axios.put('https://ecommerceserver.justtodo.fun/checkout', {}, { headers: { authorization: 'bearer ' + localStorage.getItem('token') } })
         .then(() => {
           this.getCart()
         })
